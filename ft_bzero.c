@@ -1,46 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mal-ketb <mal-ketb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 19:19:15 by mal-ketb          #+#    #+#             */
-/*   Updated: 2023/11/29 23:06:55 by mal-ketb         ###   ########.fr       */
+/*   Created: 2023/10/31 21:04:28 by mal-ketb          #+#    #+#             */
+/*   Updated: 2023/11/25 21:21:10 by mal-ketb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char	*s, int c)
-// {
-// 	int	i;
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	*alhai;
 
-// 	i = 0;
-// 	while (s[i])
-// 	{
-// 		if (s[i] == c)
-// 			return ((char *)&s[i]);
-// 		i++;
-// 	}
-// 	if (c == '\0')
-// 		return ((char *)s);
-// 	return (0);
-// }
+	alhai = (unsigned char *)s;
+	while (n--)
+		*alhai++ = 0;
+}
 
 // int	main(void)
 // {
-// 	printf("%s\n", ft_strchr("Sixty", 'x'));
+// 	char	omar[] = "omar123";
+// 	ft_bzero(omar, sizeof (omar));
+// 	printf("%s", omar);
+// 	return (0);
 // }
-
-{
-	while (*s)
-	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
-	}
-	if (c == '\0')
-		return ((char *)s);
-	return (0);
-}

@@ -1,46 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mal-ketb <mal-ketb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 19:19:15 by mal-ketb          #+#    #+#             */
-/*   Updated: 2023/11/29 23:06:55 by mal-ketb         ###   ########.fr       */
+/*   Created: 2023/11/22 21:13:02 by mal-ketb          #+#    #+#             */
+/*   Updated: 2023/11/29 23:06:27 by mal-ketb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <fcntl.h>
 
-char	*ft_strchr(const char	*s, int c)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (s[i])
-// 	{
-// 		if (s[i] == c)
-// 			return ((char *)&s[i]);
-// 		i++;
-// 	}
-// 	if (c == '\0')
-// 		return ((char *)s);
-// 	return (0);
-// }
-
-// int	main(void)
-// {
-// 	printf("%s\n", ft_strchr("Sixty", 'x'));
-// }
-
+void	ft_putnbr_fd(int n, int fd)
 {
-	while (*s)
+	if (n == -2147483648)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return (0);
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n *= -1;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+	}
+	n = n % 10 + '0';
+	ft_putchar_fd(n, fd);
 }
+
+// int main()
+// {
+// 	int fd = open("mansoor", O_WRONLY);
+
+// 	ft_putnbr_fd(3, fd);
+// }

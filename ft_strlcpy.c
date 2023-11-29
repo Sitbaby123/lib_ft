@@ -1,46 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mal-ketb <mal-ketb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 19:19:15 by mal-ketb          #+#    #+#             */
-/*   Updated: 2023/11/29 23:06:55 by mal-ketb         ###   ########.fr       */
+/*   Created: 2023/10/30 12:57:09 by mal-ketb          #+#    #+#             */
+/*   Updated: 2023/11/29 23:09:49 by mal-ketb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char	*s, int c)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (s[i])
-// 	{
-// 		if (s[i] == c)
-// 			return ((char *)&s[i]);
-// 		i++;
-// 	}
-// 	if (c == '\0')
-// 		return ((char *)s);
-// 	return (0);
-// }
-
-// int	main(void)
-// {
-// 	printf("%s\n", ft_strchr("Sixty", 'x'));
-// }
-
+size_t	ft_strlcpy(char *dst, const char *src, size_t space)
 {
-	while (*s)
+	size_t	i;
+
+	i = 0;
+	if (space > 0)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		while (src[i] && i < (space - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return (0);
+	while (src[i])
+		i++;
+	return (i);
 }

@@ -1,46 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mal-ketb <mal-ketb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 19:19:15 by mal-ketb          #+#    #+#             */
-/*   Updated: 2023/11/29 23:06:55 by mal-ketb         ###   ########.fr       */
+/*   Created: 2023/11/01 20:25:11 by mal-ketb          #+#    #+#             */
+/*   Updated: 2023/11/29 23:05:53 by mal-ketb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char	*s, int c)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (s[i])
-// 	{
-// 		if (s[i] == c)
-// 			return ((char *)&s[i]);
-// 		i++;
-// 	}
-// 	if (c == '\0')
-// 		return ((char *)s);
-// 	return (0);
-// }
-
-// int	main(void)
-// {
-// 	printf("%s\n", ft_strchr("Sixty", 'x'));
-// }
-
+void	*ft_memset(void *b, int c, size_t len)
 {
-	while (*s)
+	size_t			i;
+	unsigned char	*temp;
+
+	i = 0;
+	temp = (unsigned char *)b;
+	while (i < len)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		temp[i] = (unsigned char)c;
+		i++;
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return (0);
+	return (temp);
 }

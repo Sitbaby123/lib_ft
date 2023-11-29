@@ -1,46 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mal-ketb <mal-ketb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 19:19:15 by mal-ketb          #+#    #+#             */
-/*   Updated: 2023/11/29 23:06:55 by mal-ketb         ###   ########.fr       */
+/*   Created: 2023/11/25 19:55:37 by mal-ketb          #+#    #+#             */
+/*   Updated: 2023/11/26 17:36:21 by mal-ketb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char	*s, int c)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (s[i])
-// 	{
-// 		if (s[i] == c)
-// 			return ((char *)&s[i]);
-// 		i++;
-// 	}
-// 	if (c == '\0')
-// 		return ((char *)s);
-// 	return (0);
-// }
-
-// int	main(void)
-// {
-// 	printf("%s\n", ft_strchr("Sixty", 'x'));
-// }
-
+void	ft_lstadd_back(t_list	**lst, t_list	*new)
 {
-	while (*s)
+	t_list	*last;
+	t_list	*tem
+
+	new = *lst;
+	if (lst)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		if (*lst)
+		{
+			last = ft_lstlast(*lst);
+			new = lst->next;
+		}
+		else
+			*lst = new;
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return (0);
 }
+
+// MOVE TO THE END THEN RESET pointer
+//Last points to Null , so go to the last , change the next pointer to point to the new node
+
+
+

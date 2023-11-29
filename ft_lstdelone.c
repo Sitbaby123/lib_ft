@@ -1,46 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mal-ketb <mal-ketb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 19:19:15 by mal-ketb          #+#    #+#             */
-/*   Updated: 2023/11/29 23:06:55 by mal-ketb         ###   ########.fr       */
+/*   Created: 2023/11/25 20:02:39 by mal-ketb          #+#    #+#             */
+/*   Updated: 2023/11/26 17:45:26 by mal-ketb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char	*s, int c)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (s[i])
-// 	{
-// 		if (s[i] == c)
-// 			return ((char *)&s[i]);
-// 		i++;
-// 	}
-// 	if (c == '\0')
-// 		return ((char *)s);
-// 	return (0);
-// }
-
-// int	main(void)
-// {
-// 	printf("%s\n", ft_strchr("Sixty", 'x'));
-// }
-
+void	ft_lstdelone(t_list	*lst, void (*del)(void *))
 {
-	while (*s)
+	if (!del)
+		return (NULL);
+	if (lst)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		(*del)(lst->content);
+		free(lst);
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return (0);
 }
+
+/*void    del(void *content)
+{
+    free(content);
+}*/
+
+/*int     main(void)
+{
+    t_list *lst;
+    int i;
+
+    i = 42;
+    lst = (t_list *)malloc(sizeof(t_list));
+    lst->content = malloc(sizeof(int));
+    *(int *)lst->content = i;
+    lst->next = NULL;
+
+    ft_lstclear(&lst, &del);
+
+    return (0);
+}*/
