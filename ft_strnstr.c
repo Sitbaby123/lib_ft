@@ -38,17 +38,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-// int main()
-// {
-// 	// printf("%s\n", ft_strnstr("fake", ((void *)0), 3));
-// 	printf("%s\n", strnstr("fake", ((void *)0), 3));
-// 	// char	str[] = "Indo eu, indo eu";
-// 	// char	str1[] = "indo";
-// 	// char *result = ft_strnstr(str, str1, ft_strlen(str));
-// 	// int i = 0;
-// 	// while(i < ft_strlen(result))
-// 	// {
-// 	// 	printf("%c",result[i++]);
-// 	// }
-// }

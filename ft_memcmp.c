@@ -12,24 +12,6 @@
 
 #include "libft.h"
 
-/*int	ft_memcmp(const void *s1, const void *s2, size_t n)
-{
-	unsigned char	index;
-	int				x;
-
-	x = 0;
-	index = 0;
-	if (!s1 && !s2)
-		return (n);
-	while (n--)
-	{
-		*(unsigned char *)s1 == *(unsigned char *)s2;
-		x++;
-		index++;
-	}
-	return (index);
-}*/
-
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*str1;

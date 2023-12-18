@@ -20,11 +20,3 @@ void	ft_bzero(void *s, size_t n)
 	while (n--)
 		*alhai++ = 0;
 }
-
-// int	main(void)
-// {
-// 	char	omar[] = "omar123";
-// 	ft_bzero(omar, sizeof (omar));
-// 	printf("%s", omar);
-// 	return (0);
-// }

@@ -24,9 +24,3 @@ int	ft_strncmp(const char *s1, char *s2, size_t n)
 		return (0);
 	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
-
-// int	main(void)
-// {
-// 	printf("%i\n", ft_strncmp("Six", "Seven", 9));
-// 	printf("%i\n", strncmp("Six", "Seven", 9));
-// }

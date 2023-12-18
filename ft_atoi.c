@@ -36,10 +36,3 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-
-// int main()
-// {
-// 	printf("%d\n", ft_atoi("-------+++1234ab567"));
-// 	printf("%d", atoi("1234ab567"));
-// 	return (0);
-// }

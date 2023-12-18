@@ -32,10 +32,3 @@ void	ft_putnbr_fd(int n, int fd)
 	n = n % 10 + '0';
 	ft_putchar_fd(n, fd);
 }
-
-// int main()
-// {
-// 	int fd = open("mansoor", O_WRONLY);
-
-// 	ft_putnbr_fd(3, fd);
-// }

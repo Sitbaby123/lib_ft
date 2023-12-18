@@ -66,9 +66,3 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-
-// int main()
-// {
-// 	char *i1 = ft_itoa(-623);
-// 	printf("hh %s\n", i1);
-// }

@@ -6,24 +6,25 @@
 /*   By: mal-ketb <mal-ketb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 19:16:30 by mal-ketb          #+#    #+#             */
-/*   Updated: 2023/11/25 21:50:00 by mal-ketb         ###   ########.fr       */
+/*   Updated: 2023/12/17 18:12:17 by mal-ketb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char	*s, int c)
-{
-	char	*mak;
+char	*ft_strrchr(const char *s, int c)
 
-	mak = 0;
-	while (*s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	while (i >= 0)
 	{
-		if (*s == (unsigned char)c)
-			mak = (char *)s;
-		s++;
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
+		i--;
 	}
-	if (c == 0)
-		return ((char *)s);
-	return (mak);
+	return (NULL);
 }
